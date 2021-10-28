@@ -84,8 +84,11 @@ class MainContent extends StatelessWidget {
               '11°',
               style: textStyle,
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Text(
-              'Hola Mundo',
+              'Miércoles',
               style: textStyle,
             ),
             Expanded(
