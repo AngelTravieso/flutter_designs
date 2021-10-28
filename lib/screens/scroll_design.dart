@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ScrollScreen extends StatelessWidget {
-  ScrollScreen({Key? key}) : super(key: key);
+  const ScrollScreen({Key? key}) : super(key: key);
 
-  final boxDecoration = BoxDecoration(
+  final boxDecoration = const BoxDecoration(
       gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
@@ -13,14 +13,15 @@ class ScrollScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff30BAD6),
+        backgroundColor: const Color(0xff30BAD6),
         body: Container(
           decoration: boxDecoration,
           child: PageView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.vertical,
-            children: [
+            children: const [
               Page1(),
+              // ignore: prefer_const_constructors
               Page2(),
             ],
           ),
@@ -36,7 +37,7 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: const [
         // Background
         Background(),
 
@@ -69,7 +70,7 @@ class MainContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(
+    const textStyle = TextStyle(
         fontSize: 50, fontWeight: FontWeight.bold, color: Colors.white);
     return SafeArea(
       bottom: false,
@@ -80,14 +81,14 @@ class MainContent extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               '11°',
               style: textStyle,
             ),
             const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Miércoles',
               style: textStyle,
             ),
@@ -110,11 +111,11 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff30BAD6),
+      color: const Color(0xff30BAD6),
       child: Center(
         child: TextButton(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
               'Bienvenido',
               style: TextStyle(color: Colors.white, fontSize: 30),
@@ -122,7 +123,8 @@ class Page2 extends StatelessWidget {
           ),
           onPressed: () {},
           style: TextButton.styleFrom(
-              backgroundColor: Color(0xff0098FA), shape: StadiumBorder()),
+              backgroundColor: const Color(0xff0098FA),
+              shape: const StadiumBorder()),
         ),
       ),
     );
